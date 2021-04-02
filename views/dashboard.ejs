@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">anonima</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarColor02">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">History</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/ask">Ask</a>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <a href="/users/logout" class="btn btn-warning">Logout</a>
+      </form>
+    </div>
+  </nav>
+
+  <div class="jumbotron">
+    <h1 class="display-5">Welcome</h1>
+    <p class="lead"></p>
+    <hr class="my-4">
+    <p class="text-info">Here you can update your information and make changes to your settings.</p>
+    <div class="card mb-3">
+        <h3 class="card-header">Hello <%= name %></h3>
+        <div class="card-body">
+          <h5 class="card-title">Texas Tech University</h5>
+          <h6 class="card-subtitle text-muted">Information Technology</h6>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Spring 2020</li>
+          <li class="list-group-item">Senior</li>
+          <li class="list-group-item">You are currently ernolled for <a class="text-info">3</a> courses</li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link text-danger">Need Help?</a>
+          <a href="#" class="card-link text-success">Give us your feedback</a>
+        </div>
+        <div class="card-footer text-muted">
+          2 days ago
+        </div>
+      </div>
+      <p class="lead">
+        <a class="btn btn-primary btn-info" href="#" role="button">Edit Profile</a>
+      </p>
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">Card title</h4>
+          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="card-link">Card link</a>
+          <a href="#" class="card-link">Another link</a>
+        </div>
+      </div>
+  </div>
+

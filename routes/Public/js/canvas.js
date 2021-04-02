@@ -1,0 +1,55 @@
+window.addEventListener('load', function(){
+    const canvas = document.querySelector("#canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.height=window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    let painting =false;
+
+    function startPosition(e){
+        painting=true;
+        ctx.beginPath();
+        draw(e);
+    }
+
+    function finishedPosition(){
+        painting = false
+       
+    }
+    function draw(e){
+        e.preventDefault();
+        if(!painting) return;
+
+        ctx.lineWidth =10;
+        ctx.lineCap = "round";
+
+        if(isNaN(e.clientX)){
+
+            console.log(e["touches"][0]['clientX']);
+            ctx.lineTo(e["touches"][0]['clientX'],e["touches"][0]['clientY']);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(e["touches"][0]['clientX'],e["touches"][0]['clientY']);
+        }
+        else{
+            console.log(e.clientX);
+            ctx.lineTo(e.clientX,e.clientY);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(e.clientX,e.clientY);
+    
+    
+            console.log("touch");
+        }
+    }
+
+
+    canvas.addEventListener("mousedown", startPosition);
+    canvas.addEventListener("mouseup", finishedPosition);
+    canvas.addEventListener("mousemove", draw);
+
+    canvas.addEventListener("touchstart", startPosition);
+    canvas.addEventListener("touchcancel", finishedPosition);
+    canvas.addEventListener("touchmove", draw);
+});
